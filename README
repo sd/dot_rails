@@ -14,7 +14,25 @@ plugin tries to guess it by looking at the name of the directory containing
 your rails app, but you can override this by defining a RAILS_APP environment
 variable or ruby constant.
 
--------------------------------------------------------------------------------
+POSSIBLE FILES:
+  {app name}-database.yml         Replaces your app config/database.yml
+
+  {app name}-pre-environment.rb   Loaded before Initializer.run,
+                                  with no particular context.
+
+  {app name}-environment.rb       Loaded after Initializer.run, 
+                                  with no particular context.
+
+  {app name}-{RAILS_ENV}.rb       Loaded after the official environments file,
+                                  it receives a "config" local variable.
+
+POSSIBLE LOCATIONS:
+   $DOT_RAILS_PATH
+   ~/.rails
+   $HOME/.rails
+   ../      # this means you can place it next to your app directory
+   
+--------------------------------------------------------------------------------
 Copyright (c) 2008 Sebastian Delmont <sd@notso.net> 
 Copyright (c) 2008 StreetEasy / NMD Interactive <http://www.streeteasy.com/> 
 All rights reserved.
