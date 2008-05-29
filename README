@@ -5,8 +5,9 @@ and database.yml files inside a .rails directory on your home directory.
 
 The database config (~/.rails/{app-name}-database.yml) replaces the values 
 defined in config/database.yml for your application. Where as the environment
-file (~/.rails/{app-name}-environment.rb) is loaded in addition to the
-"official" environment.rb, allowing you to define additional settings.
+files (~/.rails/{app-name}-environment.rb and {app-name}-{RAILS_ENV}.rb)
+are loaded after the "official" environment.rb and environments/*.rb files,
+allowing you to define additional settings.
 
 As you can see, both file names are prefixed by your "application name". The
 plugin tries to guess it by looking at the name of the directory containing
